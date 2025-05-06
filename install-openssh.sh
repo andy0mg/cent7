@@ -1,5 +1,13 @@
 #!/bin/bash
 set -e
+# use curl
+# bash <(curl -sL https://raw.githubusercontent.com/andy0mg/cent7/refs/heads/main/install-openssh.sh)
+
+# use wget
+# bash <(wget -qO- https://raw.githubusercontent.com/andy0mg/cent7/refs/heads/main/install-openssh.sh)
+
+
+
 
 echo "[+] Установка зависимостей..."
 yum groupinstall -y "Development Tools"
