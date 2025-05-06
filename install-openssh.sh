@@ -49,6 +49,7 @@ mv /usr/sbin/sshd /usr/sbin/sshd.old 2>/dev/null || true
 echo "[+] Установка новых бинарников ssh и sshd..."
 ln -sf /opt/openssh-9.7/bin/ssh /usr/bin/ssh
 ln -sf /opt/openssh-9.7/sbin/sshd /usr/sbin/sshd
+sed -i -E 's/^(GSSAPIAuthentication|GSSAPICleanupCredentials)/#\1/' /etc/ssh/sshd_config
 chmod 600 /etc/ssh/ssh_host_*_key
 chown root:root /etc/ssh/ssh_host_*_key
 echo "[+] Проверка версий..."
