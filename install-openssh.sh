@@ -28,11 +28,11 @@ ldconfig
 
 echo "[+] Скачивание и установка OpenSSH 9.7p1..."
 cd /usr/local/src
-wget https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.7p1.tar.gz
-tar xzf openssh-9.7p1.tar.gz
-cd openssh-9.7p1
+wget https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.9p2.tar.gz
+tar xzf openssh-9.9p2.tar.gz
+cd openssh-9.9p2
 
-./configure --prefix=/opt/openssh-9.7 \
+./configure --prefix=/opt/openssh-9.9 \
   --sysconfdir=/etc/ssh \
   --with-ssl-dir=/opt/openssl-1.1.1 \
   --with-md5-passwords \
@@ -47,8 +47,8 @@ mv /usr/bin/ssh /usr/bin/ssh.old 2>/dev/null || true
 mv /usr/sbin/sshd /usr/sbin/sshd.old 2>/dev/null || true
 
 echo "[+] Установка новых бинарников ssh и sshd..."
-ln -sf /opt/openssh-9.7/bin/ssh /usr/bin/ssh
-ln -sf /opt/openssh-9.7/sbin/sshd /usr/sbin/sshd
+ln -sf /opt/openssh-9.9/bin/ssh /usr/bin/ssh
+ln -sf /opt/openssh-9.9/sbin/sshd /usr/sbin/sshd
 sed -i -E 's/^(GSSAPIAuthentication|GSSAPICleanupCredentials)/#\1/' /etc/ssh/sshd_config
 chmod 600 /etc/ssh/ssh_host_*_key
 chown root:root /etc/ssh/ssh_host_*_key
