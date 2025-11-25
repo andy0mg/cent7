@@ -26,7 +26,7 @@ echo "[+] Добавление OpenSSL в ld.so конфигурацию..."
 echo "/opt/openssl-1.1.1/lib" > /etc/ld.so.conf.d/openssl-1.1.1.conf
 ldconfig
 
-echo "[+] Скачивание и установка OpenSSH 9.7p1..."
+echo "[+] Скачивание и установка OpenSSH 9.9p2..."
 cd /usr/local/src
 wget https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.9p2.tar.gz
 tar xzf openssh-9.9p2.tar.gz
