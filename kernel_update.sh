@@ -1,6 +1,14 @@
 #!/bin/bash
 set -e
 
+# use curl
+# bash <(curl -sL https://raw.githubusercontent.com/andy0mg/cent7/refs/heads/main/kernel_update.sh)
+
+# use wget
+# bash <(wget -qO- https://raw.githubusercontent.com/andy0mg/cent7/refs/heads/main/kernel_update.sh)
+
+
+
 # Версия ядра для сборки (можно изменить)
 KERNEL_VERSION="5.15.184"
 KERNEL_URL="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${KERNEL_VERSION}.tar.xz"
