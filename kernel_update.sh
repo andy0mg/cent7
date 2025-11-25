@@ -56,7 +56,7 @@ if [ ! -f /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo ]; then
 [centos-sclo-rh]
 name=CentOS-7 - SCLo rh
 baseurl=http://vault.centos.org/7.9.2009/sclo/x86_64/rh/
-gpgcheck=1
+gpgcheck=0
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 EOF
@@ -67,13 +67,13 @@ if [ ! -f /etc/yum.repos.d/CentOS-Vault.repo ]; then
 [centos7-vault-base]
 name=CentOS-7 - Vault base
 baseurl=http://vault.centos.org/7.9.2009/os/x86_64/
-gpgcheck=1
+gpgcheck=0
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 [centos7-vault-updates]
 name=CentOS-7 - Vault updates
 baseurl=http://vault.centos.org/7.9.2009/updates/x86_64/
-gpgcheck=1
+gpgcheck=0
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 EOF
