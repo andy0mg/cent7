@@ -10,7 +10,7 @@ set -e
 
 
 # Версия ядра для сборки (можно изменить)
-KERNEL_VERSION="5.15.184"
+KERNEL_VERSION="5.15.196"
 KERNEL_URL="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${KERNEL_VERSION}.tar.xz"
 
 BACKUP_DATE=$(date +%F-%H%M%S)
