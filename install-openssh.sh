@@ -56,4 +56,27 @@ echo "[+] Проверка версий..."
 ssh -V
 sshd -V
 
+echo ">> Creating systemd override for sshd..."
+
+# Создаём каталог override-файла (если нет)
+mkdir -p /etc/systemd/system/sshd.service.d
+
+# Пишем override.conf
+cat >/etc/systemd/system/sshd.service.d/override.conf <<'EOF'
+[Service]
+Type=simple
+Environment=
+ExecStart=
+ExecStart=/usr/sbin/sshd -D -e
+EOF
+
+echo ">> Reloading systemd..."
+systemctl daemon-reload
+
+echo ">> Restarting sshd..."
+systemctl restart sshd
+
+echo ">> SSHD status:"
+systemctl status sshd -l --no-pager
+
 echo "[✓] Установка завершена. Проверь SSH в новом окне, прежде чем выходить из текущей сессии!"
